@@ -18,7 +18,7 @@
  <h6><a href="/menu">Back to Menu</a></h6>
 
 <form:form method="post" action="addCampaing" commandName="new_campaign">
- 
+ <h2>Add new Campaign</h2>
     <table>
     <tr>
         <td>Campaign Name:</td>
