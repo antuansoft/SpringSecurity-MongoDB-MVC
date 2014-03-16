@@ -23,12 +23,7 @@
     <context:component-scan base-package="com.antuansoft.spring.mvc" />  
     <context:component-scan base-package="com.antuansoft.spring.security" />
     <context:component-scan base-package="com.antuansoft.mongodb.domain" />
-    <!-- 
-     <context:component-scan base-package="com.packt.springsecurity.mongodb.controller" />
- 	 <context:component-scan base-package="com.packt.springsecurity.mongodb.manager" />
-	 <context:component-scan base-package="com.packt.springsecurity.mongodb.dao" />
-	 <context:component-scan base-package="com.packt.springsecurity.mongodb.documententity" />
-    -->
+    
     
     <bean id="jspViewResolver"
         class="org.springframework.web.servlet.view.InternalResourceViewResolver">

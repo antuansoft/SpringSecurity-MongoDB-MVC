@@ -96,7 +96,7 @@ public class MainController {
 		return "redirect:/listCampaigns";
 	}
 	
-
+	@PreAuthorize("hasRole('ROLE_CAMPAIGN')")
 	@RequestMapping("/deleteCampaing/{campaign_id}")
 	public String deleteHorrorMovie(@PathVariable("campaign_id") String campaignId){
 		campaignRepositoryDao.delete(campaignId);
