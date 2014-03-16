@@ -24,7 +24,7 @@ public class UserPopulateCollection {
     /**
      * Test que sirve para poblar la base de datos de usuarios.
      */
-    @Test
+    //@Test
 	public void populateCollectionUser(){
 		
 		User user1 = new User();
@@ -34,7 +34,7 @@ public class UserPopulateCollection {
 		user1.setName("Admin");
 		user1.setSurname("Users");
 		user1.setPassword("123");
-		user1.setRole(1);
+		user1.setRole(1);//Admin role
 		user1.setUsername("user1@antuansoft.es");
 		
 		User user2 = new User();
@@ -43,7 +43,7 @@ public class UserPopulateCollection {
 		user2.setName("Admin");
 		user2.setSurname("Campaigns");
 		user2.setPassword("123");
-		user2.setRole(2);
+		user2.setRole(2);//Campaign role
 		user2.setUsername("user2@antuansoft.es");
 		
 		

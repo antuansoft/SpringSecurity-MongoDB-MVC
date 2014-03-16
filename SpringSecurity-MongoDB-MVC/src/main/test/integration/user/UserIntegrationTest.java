@@ -4,6 +4,7 @@ import javax.annotation.Resource;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.test.context.ContextConfiguration;
@@ -34,12 +35,20 @@ public class UserIntegrationTest {
 		
 	}
 	
-	//TUS TEST AQUI
+	//YOU TEST HERE
+	
+	@Test
+	public void yourTest(){
+		
+		
+	}
 	
 	/**
 	 * Método que se ejecuta después de cada Test.
 	 * Dejamos la base de dato limpia para el siguiente test
 	 */
+	
+	
 	@After
 	public void after(){
 		
