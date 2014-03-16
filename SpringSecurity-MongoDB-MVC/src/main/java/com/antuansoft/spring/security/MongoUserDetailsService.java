@@ -33,6 +33,7 @@ public class MongoUserDetailsService implements UserDetailsService {
     private static final Logger logger = Logger.getLogger(MongoUserDetailsService.class);
     
 private org.springframework.security.core.userdetails.User userdetails;
+
     public UserDetails loadUserByUsername(String username)
             throws UsernameNotFoundException {
         boolean enabled = true;
@@ -44,7 +45,15 @@ private org.springframework.security.core.userdetails.User userdetails;
          System.out.println(user.getPassword());
           System.out.println(user.getUsername());
            System.out.println(user.getRole());
-            return new User(user.getUsername(), user.getPassword(),enabled,accountNonExpired,credentialsNonExpired,accountNonLocked,getAuthorities(user.getRole()));
+            
+            userdetails = new User(user.getUsername(), 
+            					   user.getPassword(),
+    		        			   enabled,
+    		        			   accountNonExpired,
+    		        			   credentialsNonExpired,
+    		        			   accountNonLocked,
+    		        			   getAuthorities(user.getRole()));
+            return userdetails;
     }
 
     public List<GrantedAuthority> getAuthorities(Integer role) {

@@ -7,13 +7,13 @@
 		<hr />
 	
 		<c:if test="${not empty error}">
-			<div style="color:red">
-				Your fake login attempt was bursted, dare again !!<br /> 
+			<div style="color:red"> 
 				Caused : ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
 			</div>
 		</c:if>
 	
 		<p class="message">Access denied!</p>
 		<a href="/login">Go back to login page</a> 
+		<h6><a href="javascript:window.history.back()">Back to last page</a></h6>
 	</body>
 </html>

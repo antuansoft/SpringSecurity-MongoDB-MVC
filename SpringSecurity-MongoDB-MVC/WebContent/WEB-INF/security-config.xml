@@ -14,8 +14,9 @@
 		<intercept-url pattern="/logout" access="permitAll" />
 		<intercept-url pattern="/accessdenied" access="permitAll" />
 		<intercept-url pattern="/listUsers" access="hasRole('ROLE_ADMIN')" />
-<!--                <http-basic/>-->
-         <form-login login-page="/login" default-target-url="/menu" authentication-failure-url="/accessdenied"  />
+		<intercept-url pattern="/menu" access="hasAnyRole('ROLE_ADMIN','ROLE_CAMPAIGN')" />
+		
+        <form-login login-page="/login" default-target-url="/menu" authentication-failure-url="/accessdenied"  />
 		<logout logout-success-url="/logout" />
 	</http>
 

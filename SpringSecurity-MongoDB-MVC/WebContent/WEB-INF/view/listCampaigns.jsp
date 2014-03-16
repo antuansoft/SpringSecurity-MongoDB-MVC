@@ -4,18 +4,18 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
-    <title>Campaign List</title>
+    <title>Campaigns List</title>
 </head>
 <body>
 
-<h2>User info</h2>
+<h2>Your user info</h2>
  <h6><a href="j_spring_security_logout">Click here to logout</a></h6>
  <sec:authorize access="isAuthenticated()">
  Username: <sec:authentication property="principal.username" />
  Role: <sec:authentication property="principal.authorities"/>
  </sec:authorize>
  
- <h6><a href="/menu">Menu</a></h6>
+ <h6><a href="/menu">Back to Menu</a></h6>
 
 <form:form method="post" action="addCampaing" commandName="new_campaign">
  
@@ -42,20 +42,22 @@
 </form:form>
 
 
-<h3>Campañas</h3>
+<h3>Campaigns</h3>
 <c:if  test="${!empty campaigns}">
 <table class="data">
 <tr>
-	<th>id</th>
-    <th>Nombre</th>
-    <th>coste</th>
-    <th>cliente</th>
+	
+    <th>Name</th>
+    <th>Cost</th>
+    <th>Customer</th>
+    <th>Action</th>
    
     
     <th>&nbsp;</th>
 </tr>
 <c:forEach items="${campaigns}" var="campaign">
     <tr>
+   		
         <td>${campaign.name} </td>
         <td>${campaign.cost} </td>
         <td>${campaign.client} </td>

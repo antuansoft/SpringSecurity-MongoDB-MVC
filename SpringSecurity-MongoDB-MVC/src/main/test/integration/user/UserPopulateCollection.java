@@ -24,27 +24,27 @@ public class UserPopulateCollection {
     /**
      * Test que sirve para poblar la base de datos de usuarios.
      */
-    //@Test
+    @Test
 	public void populateCollectionUser(){
 		
 		User user1 = new User();
 		
 		user1.setAge(33);
 		user1.setId(UUID.randomUUID().toString());
-		user1.setName("User1");
-		user1.setSurname("Surname1");
+		user1.setName("Admin");
+		user1.setSurname("Users");
 		user1.setPassword("123");
 		user1.setRole(1);
-		user1.setUsername("user1@puleva.es");
+		user1.setUsername("user1@antuansoft.es");
 		
 		User user2 = new User();
 		user2.setAge(35);
 		user2.setId(UUID.randomUUID().toString());
-		user2.setName("User2");
-		user2.setSurname("Surname2");
+		user2.setName("Admin");
+		user2.setSurname("Campaigns");
 		user2.setPassword("123");
 		user2.setRole(2);
-		user2.setUsername("user2@puleva.es");
+		user2.setUsername("user2@antuansoft.es");
 		
 		
 		userRespositoryDao.save(user1);

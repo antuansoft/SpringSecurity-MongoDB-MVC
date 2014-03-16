@@ -8,23 +8,25 @@
 </head>
 <body>
 
-<h2>User List</h2>
+<h2>Your user info</h2>
  <h6><a href="j_spring_security_logout">Click here to logout</a></h6>
  <sec:authorize access="isAuthenticated()">
  Username: <sec:authentication property="principal.username" />
  Role: <sec:authentication property="principal.authorities"/>
  </sec:authorize>
 
-<h3>USUARIOS</h3>
+<h6><a href="/menu">Back to Menu</a></h6>
+
+<h3>USERS</h3>
 <c:if  test="${!empty users}">
 <table class="data">
 <tr>
-    <th>Nombre</th>
-    <th>Apellidos</th>
-    <th>edad</th>
-    <th>username</th>
-    <th>password</th>
-    <th>rol</th>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Age</th>
+    <th>Username</th>
+    <th>Password</th>
+    <th>Role</th>
     
     <th>&nbsp;</th>
 </tr>
@@ -37,7 +39,7 @@
         <td>${user.password} </td>
         <td>${user.role} </td>
         
-        <td><a href="delete/${user.id}">delete</a></td>
+        <!-- <td><a href="delete/${user.id}">delete</a></td>  -->
     </tr>
 </c:forEach>
 </table>
