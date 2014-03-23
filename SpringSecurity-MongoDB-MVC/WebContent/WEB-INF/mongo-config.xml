@@ -19,13 +19,18 @@
         http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd">
 
         
+        <!-- MongoBD Database configuration host and port -->
         <mongo:mongo host="127.0.0.1" port="27017" />
+        
+        <!-- Define the mongoDbFactory with your database Name  -->
 		<mongo:db-factory dbname="demodb" />
  
+ 		<!-- Define the MongoTemplate  -->
 		<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
 			<constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
 		</bean>  
- 
+ 		
+ 		<!-- Base package to scan the mongo repositories, where we create de DAOS to access data and domain objects -->
         <mongo:repositories base-package="com.antuansoft.mongodb.repositories" />
        
 

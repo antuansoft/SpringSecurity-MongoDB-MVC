@@ -2,7 +2,7 @@ package com.antuansoft.mongodb.domain;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "campaign")
+@Document(collection = "campaign" )
 public class Campaign {
 	
 

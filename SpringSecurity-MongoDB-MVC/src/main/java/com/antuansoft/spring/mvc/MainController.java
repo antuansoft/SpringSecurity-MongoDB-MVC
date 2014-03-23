@@ -14,11 +14,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.antuansoft.mongodb.domain.Campaign;
+import com.antuansoft.mongodb.domain.User;
 import com.antuansoft.mongodb.repositories.CampaignRepositoryDao;
 import com.antuansoft.mongodb.repositories.UserRepositoryDao;
 
@@ -71,7 +71,8 @@ public class MainController {
 	@RequestMapping(value = "/listUsers", method = RequestMethod.GET)
 	public String listUsers(ModelMap map) {
 		
-		map.addAttribute("users",userRepositoryDao.findAll());
+		Iterable<User> users= userRepositoryDao.findAll();
+		map.addAttribute("users", users);
 		
 		return "listUsers";
 	}
@@ -80,7 +81,8 @@ public class MainController {
 	public String listCampaigns(ModelMap map) {
 		
 		map.addAttribute("new_campaign", new Campaign());
-		map.addAttribute("campaigns",campaignRepositoryDao.findAll());
+		Iterable<Campaign> campaings= campaignRepositoryDao.findAll();
+		map.addAttribute("campaigns",campaings);
 		
 		return "listCampaigns";
 	}
@@ -96,12 +98,7 @@ public class MainController {
 		return "redirect:/listCampaigns";
 	}
 	
-	@PreAuthorize("hasRole('ROLE_CAMPAIGN')")
-	@RequestMapping("/deleteCampaing/{campaign_id}")
-	public String deleteHorrorMovie(@PathVariable("campaign_id") String campaignId){
-		campaignRepositoryDao.delete(campaignId);
-		return "redirect:/listCampaigns";
-	}
+	
 
 	
 

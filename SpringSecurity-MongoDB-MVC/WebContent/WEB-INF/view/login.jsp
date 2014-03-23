@@ -4,7 +4,7 @@
 
 <html>
 	<body>
-		<h1 id="banner">Spring 3 method security Demo</h1>  
+		<h1 id="banner">Spring 3 security MongoDB Demo</h1>  
 		<form name="f" action="j_spring_security_check" method="POST">
 			<table>
 				<tr>
@@ -19,7 +19,7 @@
 					<td colspan="2">&nbsp;</td>
 				</tr>
 				<tr>
-					<td colspan='2'><input name="submit" type="submit">&nbsp;<input name="reset" type="reset"></td>
+					<td colspan='2'><input value="Send" name="submit" type="submit">&nbsp;<input value="Reset" name="reset" type="reset"></td>
 				</tr>
 			</table>
 		</form>

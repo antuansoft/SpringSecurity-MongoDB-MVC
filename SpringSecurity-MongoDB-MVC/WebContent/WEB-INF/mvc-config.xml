@@ -18,13 +18,15 @@
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
         http://www.springframework.org/schema/mvc  http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
  
+ 	<!-- Set the Spring context to allow for dispatching request to Controllers -->
  	<mvc:annotation-driven />
-    <context:annotation-config />
+ 	
+ 	<!-- Activate annotations and set the packages where scan to look for spring beans	 -->
     <context:component-scan base-package="com.antuansoft.spring.mvc" />  
     <context:component-scan base-package="com.antuansoft.spring.security" />
-    <context:component-scan base-package="com.antuansoft.mongodb.domain" />
     
     
+    <!-- Basic view resolver to set where JSPs are located -->
     <bean id="jspViewResolver"
         class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass"
